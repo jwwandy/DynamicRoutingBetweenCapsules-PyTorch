@@ -1,0 +1,22 @@
+num_epochs: 100
+batch_size: 64
+route_iters: 3
+use_cuda: True
+loss:
+    with_reconstruction: True
+    rc_loss_weight: 0.0005
+optim:
+    lr: 0.001
+    step_decay: 0.5
+    milestone: [30, 70]
+dataloader:
+    num_workers: 4
+    pin_memory: True
+checkpoint:
+    model_path: "capsnet.pt"
+    log_dir: "checkpoint"
+    use_checkpoint: True
+    use_best: False
+    
+
+
