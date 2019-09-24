@@ -69,6 +69,7 @@ We achieve **99.71%** accuracy with the following setting.
 * `Num Epochs`: 2200
 * `Routing iterations`: 3
 * `With Recostruction`: True
+* `Batch Size`: 256
 
 #### Optimizer settings
 
