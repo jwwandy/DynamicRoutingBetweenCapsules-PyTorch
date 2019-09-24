@@ -1,22 +1,22 @@
-num_epochs: 100
-batch_size: 64
-route_iters: 3
-use_cuda: True
-loss:
-    with_reconstruction: True
-    rc_loss_weight: 0.0005
+num_epochs: 100 # Number of Epochs to train
+batch_size: 64  # Batch Size
+route_iters: 3  # Routing Iterations for capsules module
+use_cuda: True  # If using CUDA support
+loss: 
+    with_reconstruction: True   # Use reconstruction loss of not
+    rc_loss_weight: 0.0005      # Weight balance for classification margin loss and reconstruction mse loss
 optim:
-    lr: 0.001
-    step_decay: 0.5
-    milestone: [30, 70]
+    lr: 0.001           # Adam optimizer initial learning rate
+    step_decay: 0.5     # Step decay for MultiStepLRScheduler
+    milestone: [30, 70] # Milestone for MultiStepLRScheduler
 dataloader:
-    num_workers: 4
-    pin_memory: True
+    num_workers: 4      # Data loader multiprocess workers 
+    pin_memory: True    # Using CUDA pin mmemory
 checkpoint:
-    model_path: "capsnet.pt"
-    log_dir: "checkpoint"
-    use_checkpoint: True
-    use_best: False
+    model_path: "capsnet.pt" # Model state path to save, would be join we log_dir below
+    log_dir: "checkpoint"    # Logger directory, including model state path and tensorboard event file
+    use_checkpoint: True     # Using previous check point in log_dir for resuming training
+    use_best: False          # Start training for best model in model state file
     
 
 
